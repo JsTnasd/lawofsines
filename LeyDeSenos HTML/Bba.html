@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>Law of sines</head>
+
+    <body>
+        <br>
+
+        <form>
+
+            <label for="options">Choose your option</label>
+            <select id="selection" name="selection">
+    
+            <option value="Aab">Aab</option>
+            <option value="Aac">Aac</option>
+            <option value="Bbc">Bbc</option>
+            <option value="Cca">Cca</option>
+            <option value="Ccb">Ccb</option>
+    
+            </select>
+            <button type="button" onclick="selectionFunction()">Submit!</button>
+            <br><br>
+    
+        </form>
+
+        <label for="B">B:</label>
+        <input type="number" id="B" name="B"><br><br>
+
+        <label for="b">b:</label>
+        <input type="number" id="b" name="b"><br><br>
+
+        <label for="a">a:</label>
+        <input type="number" id="a" name="a"><br><br>
+    
+        <button type="button" onclick="trigonometry()">Calculate</button>
+
+        <h2>Answers:</h2>
+        <p id="text"></p>
+
+        <script>
+
+        function selectionFunction() {
+            const select = document.getElementById("selection").value
+            window.location.href = `${select}.html`
+        }
+
+        function trigonometry() {
+
+            const B = parseFloat(document.getElementById("B").value)
+            const b = parseFloat(document.getElementById("b").value)
+            const a = parseFloat(document.getElementById("a").value)
+
+            if(B >= 180) return alert("This number is to high...")
+            if(B < 0 || b < 0 || a < 0) return alert("You can't put negative numbers")
+            if (isNaN(B) || isNaN(b) || isNaN(a)) return alert("Check the spaces of B, b and a")
+    
+            const angleInRadians = B * Math.PI / 180
+            const sinValue = Math.sin(angleInRadians)
+            const result = a * sinValue
+    
+            const finish = result / b
+            const inverseSine = Math.asin(finish)
+            const finished = inverseSine * 180 / Math.PI
+    
+            const C = 180 - B - finished
+
+            const angleInRadians1 = C * Math.PI / 180
+            const sinValue1 = Math.sin(angleInRadians1)
+            const result1 = b * sinValue1
+
+            const angleInRadians2 = B * Math.PI / 180
+            const sinValue2 = Math.sin(angleInRadians2)
+    
+            const c = result1 / sinValue2
+
+            if(isNaN(finished) || isNaN(C) || isNaN(c)) return alert("We cant resolve this...")
+    
+            const answers = `A = ${finished}<br> B = ${B}<br>C = ${C}<br><br>a = ${a}<br> b = ${b}<br> c = ${c}`
+    
+            document.getElementById("text").innerHTML = answers
+    
+        }
+    
+        function calling() {
+                trigonometry()
+            }
+            
+        </script>
+
+        <img src="lawimage.png" height="250">
+
+    </body>
+</html>

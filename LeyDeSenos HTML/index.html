@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>Law of sine</head>
+
+    <body>
+
+    <form>
+
+        <label for="options">Choose your option</label>
+        <select id="selection" name="selection">
+
+        <option value="Aab">Aab</option>
+        <option value="Aac">Aac</option>
+        <option value="Bba">Bba</option>
+        <option value="Bbc">Bbc</option>
+        <option value="Cca">Cca</option>
+        <option value="Ccb">Ccb</option>
+
+        </select>
+        <button type="button" onclick="selectionFunction()">Submit!</button>
+        <br><br>
+
+    </form>
+
+        <script>
+
+        function selectionFunction() {
+            const select = document.getElementById("selection").value
+            window.location.href = `${select}.html`
+        }
+
+        </script>
+
+        <img src="lawimage.png" height="250">
+
+    </body>
+
+
+</html>
+
+
+
+

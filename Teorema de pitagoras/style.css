@@ -2,54 +2,6 @@ body {
     background-color: rgb(170, 206, 123);
 }
 
-.seleccion {
-    background-color: rgb(19, 199, 58);
-    border: none;
-    color: white;
-    font-weight: bold;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: medium;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.seleccion:hover {
-    background-color: rgb(26, 151, 53);
-}
-
-.opcionE {
-    font-size: 20px;
-    font-family:monospace;
-    color: white;
-}
-
-.Tp {
-    font-size: 25px;
-    font-family: monospace;
-    color: white;
-}
-
-.Accept {
-    background-color: rgb(19, 199, 58);
-    border: none;
-    color: white;
-    font-weight: bold;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: medium;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.Accept:hover {
-    background-color: rgb(26, 151, 53);
-}
-
 .allopt {
     background-color: rgb(19, 199, 58);
     border: none;
@@ -66,4 +18,16 @@ body {
 
 .allopt:hover {
     background-color: rgb(26, 151, 53);
+}
+
+.opcionE {
+    font-size: 20px;
+    font-family:monospace;
+    color: white;
+}
+
+.Tp {
+    font-size: 25px;
+    font-family: monospace;
+    color: white;
 }

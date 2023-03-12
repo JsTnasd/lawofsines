@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Teorema de pitagoras</title>
+
+    </head>
+
+    <body>
+
+        <link rel="stylesheet" href="index.css">
+
+        <h1>Teorema de pitagoras</h1>
+
+        <label>Elige tu opcion</label>
+
+        <select id="seleccion" name="seleccion">
+        <option value="cb">Lado c y b busca a</option>
+        <option value="ca">Lado c y a busca b</option>
+        </select>
+        
+        
+        <button id="push" onclick="redirect()">Aceptar</button>
+        
+        <br><br>
+
+        <label for="a">a:</label>
+        <input type="number" id="a" name="a"><br><br>
+
+        <label for="b">b:</label>
+        <input type="number" id="b" name="b"><br><br>
+
+        <button id="respuesta" onclick="teoremaPitagora()">Realizar</button>
+
+        <h2>Respuesta:</h2>
+        <p id="textoEstablecido"></p>
+
+        <script>
+
+            function redirect() {
+                const redirection = document.getElementById("seleccion").value
+                window.location.href = `${redirection}.html`
+            }
+
+            function teoremaPitagora() {
+            const a = parseFloat(document.getElementById("a").value)
+            const b = parseFloat(document.getElementById("b").value)
+
+            if(isNaN(a) || isNaN(b)) return alert("Mira las cajas..")
+
+            const respuestaFinal = Math.sqrt(a * a + b * b)
+
+            if(isNaN(respuestaFinal)) return alert("El numero establecido es muy grande, da negativo y raiz cuadrada de un numero negativo no se puede hacer...")
+            
+            document.getElementById("textoEstablecido").innerHTML = respuestaFinal
+
+            }
+            
+            function funcion() {
+            redirect()
+            teoremaPitagora()
+            }
+
+        </script>
+
+
+    </body>
+
+</html>
